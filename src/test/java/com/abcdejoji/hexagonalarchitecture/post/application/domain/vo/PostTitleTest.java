@@ -39,10 +39,10 @@ class PostTitleTest {
     @DisplayName("제목이 10자리가 넘으면 AssertionError가 발생한다")
     void titleLength() throws Exception {
 
-        assertThat(new PostTitle("1234567890")).isNotNull();
+        assertThat(new PostTitle("1".repeat(10))).isNotNull();
 
-        assertThatThrownBy(() -> new PostTitle("12345678901"))
+        assertThatThrownBy(() -> new PostTitle("1".repeat(11)))
                 .isInstanceOf(AssertionError.class)
-                .hasMessage("제목은 10자리를 넘을 수 없습니다.");
+                .hasMessage("제목은 10자를 넘을 수 없습니다.");
     }
 }
