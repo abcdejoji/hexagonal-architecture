@@ -9,6 +9,7 @@ public class PostTitle {
     public PostTitle(String value) {
 
         assert StringUtils.hasText(value): "제목은 빈 값일 수 없습니다.";
+        assert value.length() <= 10 : "제목은 10자리를 넘을 수 없습니다.";
 
         this.value = value;
     }

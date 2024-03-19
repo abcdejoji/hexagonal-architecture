@@ -9,19 +9,40 @@ import static org.assertj.core.api.Assertions.*;
 class PostTitleTest {
 
     @Test
-    @DisplayName("제목에 빈 값이 들어오면 AssertionError가 발생한다")
-    void titleNotEmpty() throws Exception {
+    @DisplayName("제목에 null이 들어오면 AssertionError가 발생한다")
+    void titleNotNull() throws Exception {
 
         assertThatThrownBy(() -> new PostTitle(null))
                 .isInstanceOf(AssertionError.class)
                 .hasMessage("제목은 빈 값일 수 없습니다.");
+    }
+
+    @Test
+    @DisplayName("제목에 빈 값이 들어오면 AssertionError가 발생한다")
+    void titleNotEmpty() throws Exception {
 
         assertThatThrownBy(() -> new PostTitle(""))
                 .isInstanceOf(AssertionError.class)
                 .hasMessage("제목은 빈 값일 수 없습니다.");
+    }
 
-        assertThatThrownBy(() -> new PostTitle("   "))
+    @Test
+    @DisplayName("제목에 널 스트링이 들어오면 AssertionError가 발생한다")
+    void titleNotNullString() throws Exception {
+
+        assertThatThrownBy(() -> new PostTitle(" "))
                 .isInstanceOf(AssertionError.class)
                 .hasMessage("제목은 빈 값일 수 없습니다.");
+    }
+
+    @Test
+    @DisplayName("제목이 10자리가 넘으면 AssertionError가 발생한다")
+    void titleLength() throws Exception {
+
+        assertThat(new PostTitle("1234567890")).isNotNull();
+
+        assertThatThrownBy(() -> new PostTitle("12345678901"))
+                .isInstanceOf(AssertionError.class)
+                .hasMessage("제목은 10자리를 넘을 수 없습니다.");
     }
 }
