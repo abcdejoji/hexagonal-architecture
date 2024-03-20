@@ -50,6 +50,12 @@ jacocoTestReport {
         csv.required = false
     }
 
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ["com/abcdejoji/**/*Application*"])
+        }))
+    }
+
     finalizedBy 'jacocoTestCoverageVerification'
 }
 
