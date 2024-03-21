@@ -1,5 +1,6 @@
-package com.abcdejoji.hexagonalarchitecture.post.application.port.dto;
+package com.abcdejoji.hexagonalarchitecture.post.application.port.in.dto;
 
+import com.abcdejoji.hexagonalarchitecture.post.application.domain.*;
 import com.abcdejoji.hexagonalarchitecture.post.application.domain.vo.*;
 
 public class PostCreateRequest {
@@ -10,5 +11,9 @@ public class PostCreateRequest {
     public PostCreateRequest(PostTitle postTitle, PostContent postContent) {
         this.postTitle = postTitle;
         this.postContent = postContent;
+    }
+
+    public Post toEntity() {
+        return new Post(this.postTitle, this.postContent);
     }
 }

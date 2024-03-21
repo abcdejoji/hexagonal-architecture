@@ -3,6 +3,8 @@ package com.abcdejoji.hexagonalarchitecture.post.application.domain;
 import com.abcdejoji.hexagonalarchitecture.post.application.domain.id.*;
 import com.abcdejoji.hexagonalarchitecture.post.application.domain.vo.*;
 
+import java.util.*;
+
 public class Post {
 
     private final PostId postId;
@@ -17,5 +19,22 @@ public class Post {
         this.postId = postId;
         this.postTitle = postTitle;
         this.postContent = postContent;
+    }
+
+    public Post(PostTitle postTitle, PostContent postContent) {
+        this(null, postTitle, postContent);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Post post = (Post) o;
+        return Objects.equals(postId, post.postId) && Objects.equals(postTitle, post.postTitle) && Objects.equals(postContent, post.postContent);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(postId, postTitle, postContent);
     }
 }
