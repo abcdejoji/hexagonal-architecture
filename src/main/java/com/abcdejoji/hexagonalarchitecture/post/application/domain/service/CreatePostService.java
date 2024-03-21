@@ -1,4 +1,4 @@
-package com.abcdejoji.hexagonalarchitecture.post.application.service.in;
+package com.abcdejoji.hexagonalarchitecture.post.application.domain.service;
 
 import com.abcdejoji.hexagonalarchitecture.config.jacoco.*;
 import com.abcdejoji.hexagonalarchitecture.post.application.port.in.*;
