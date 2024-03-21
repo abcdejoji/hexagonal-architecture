@@ -8,7 +8,7 @@ import org.junit.jupiter.api.*;
 import static org.assertj.core.api.Assertions.*;
 
 
-class PostCreateRequestTest {
+class CreatePostRequestTest {
 
     @Test
     @DisplayName("생성")
@@ -19,7 +19,7 @@ class PostCreateRequestTest {
         PostContent postContent = new PostContent("b");
 
         // when
-        PostCreateRequest request = new PostCreateRequest(postTitle, postContent);
+        CreatePostRequest request = new CreatePostRequest(postTitle, postContent);
 
         // then
         assertThat(request).isNotNull();
@@ -30,7 +30,7 @@ class PostCreateRequestTest {
     void toEntity() throws Exception {
 
         // given
-        PostCreateRequest request = new PostCreateRequest(
+        CreatePostRequest request = new CreatePostRequest(
                 new PostTitle("제목"),
                 new PostContent("내용")
         );

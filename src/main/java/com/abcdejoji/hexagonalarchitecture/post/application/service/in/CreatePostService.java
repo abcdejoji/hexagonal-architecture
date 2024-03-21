@@ -13,7 +13,7 @@ class CreatePostService implements CreatePostUseCase {
     }
 
     @Override
-    public void createPost(PostCreateRequest request) {
+    public void createPost(CreatePostRequest request) {
         savePostPort.savePost(request.toEntity());
     }
 }

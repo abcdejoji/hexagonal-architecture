@@ -17,7 +17,7 @@ class CreatePostServiceTest {
     void createPost() throws Exception {
 
         // given
-        PostCreateRequest request = new PostCreateRequest(
+        CreatePostRequest request = new CreatePostRequest(
                 new PostTitle("제목"),
                 new PostContent("내용")
         );
