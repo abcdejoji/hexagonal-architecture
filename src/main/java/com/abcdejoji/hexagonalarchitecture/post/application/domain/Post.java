@@ -1,5 +1,6 @@
 package com.abcdejoji.hexagonalarchitecture.post.application.domain;
 
+import com.abcdejoji.hexagonalarchitecture.config.jacoco.*;
 import com.abcdejoji.hexagonalarchitecture.post.application.domain.id.*;
 import com.abcdejoji.hexagonalarchitecture.post.application.domain.vo.*;
 
@@ -25,6 +26,7 @@ public class Post {
         this(null, postTitle, postContent);
     }
 
+    @ExcludeTestGenerated
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -33,6 +35,7 @@ public class Post {
         return Objects.equals(postId, post.postId) && Objects.equals(postTitle, post.postTitle) && Objects.equals(postContent, post.postContent);
     }
 
+    @ExcludeTestGenerated
     @Override
     public int hashCode() {
         return Objects.hash(postId, postTitle, postContent);

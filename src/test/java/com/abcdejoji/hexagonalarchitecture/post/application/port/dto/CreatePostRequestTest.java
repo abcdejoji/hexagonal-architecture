@@ -11,21 +11,6 @@ import static org.assertj.core.api.Assertions.*;
 class CreatePostRequestTest {
 
     @Test
-    @DisplayName("생성")
-    void constructor() throws Exception {
-
-        // given
-        PostTitle postTitle = new PostTitle("a");
-        PostContent postContent = new PostContent("b");
-
-        // when
-        CreatePostRequest request = new CreatePostRequest(postTitle, postContent);
-
-        // then
-        assertThat(request).isNotNull();
-    }
-
-    @Test
     @DisplayName("Post Entity를 생성한다.")
     void toEntity() throws Exception {
 

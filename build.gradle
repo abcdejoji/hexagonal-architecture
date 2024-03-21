@@ -52,7 +52,7 @@ jacocoTestReport {
 
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: ["com/abcdejoji/**/*Application"])
+            fileTree(dir: it, exclude: ["com/abcdejoji/**/Application.*"])
         }))
     }
 
@@ -84,7 +84,7 @@ jacocoTestCoverageVerification {
                 maximum = 150
             }
 
-            excludes = ["*.*Application"]
+            excludes = ["**.Application"]
         }
     }
 }
