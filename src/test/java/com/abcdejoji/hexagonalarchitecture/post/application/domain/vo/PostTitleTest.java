@@ -1,6 +1,5 @@
 package com.abcdejoji.hexagonalarchitecture.post.application.domain.vo;
 
-import com.abcdejoji.hexagonalarchitecture.post.application.domain.vo.*;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.Assertions.*;

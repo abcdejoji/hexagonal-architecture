@@ -35,14 +35,13 @@ jacoco {
     toolVersion = '0.8.11'
 }
 
-tasks.named('test') {
+test {
     outputs.dir snippetsDir
     useJUnitPlatform()
-
-    finalizedBy 'jacocoTestReport'
 }
 
 jacocoTestReport {
+    dependsOn 'test'
 
     reports {
         html.required = true
@@ -52,14 +51,16 @@ jacocoTestReport {
 
     afterEvaluate {
         classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: ["com/abcdejoji/**/Application.*"])
+            fileTree(
+                    dir: it,
+                    exclude: ["com/abcdejoji/**/*Application*"]
+            )
         }))
     }
-
-    finalizedBy 'jacocoTestCoverageVerification'
 }
 
 jacocoTestCoverageVerification {
+    dependsOn 'jacocoTestCoverageVerification'
 
     violationRules {
         rule {
@@ -84,13 +85,14 @@ jacocoTestCoverageVerification {
                 maximum = 150
             }
 
-            excludes = ["**.Application"]
+            excludes = ["**.*Application*"]
         }
     }
 }
 
-tasks.named('asciidoctor') {
-    inputs.dir snippetsDir
+asciidoctor {
     dependsOn test
+
+    inputs.dir snippetsDir
 }
 
