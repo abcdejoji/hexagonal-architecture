@@ -6,6 +6,8 @@ import com.abcdejoji.hexagonalarchitecture.post.application.domain.vo.*;
 
 import java.util.*;
 
+import static java.util.Objects.*;
+
 public class Post {
 
     private final PostId postId;
@@ -14,8 +16,8 @@ public class Post {
 
     public Post(PostId postId, PostTitle postTitle, PostContent postContent) {
 
-        assert postTitle != null : "제목은 필수 값 입니다.";
-        assert postContent != null : "내용은 필수 값 입니다.";
+        requireNonNull(postTitle, "제목은 필수 값 입니다.");
+        requireNonNull(postContent, "내용은 필수 값 입니다.");
 
         this.postId = postId;
         this.postTitle = postTitle;
@@ -38,6 +40,6 @@ public class Post {
     @ExcludeTestGenerated
     @Override
     public int hashCode() {
-        return Objects.hash(postId, postTitle, postContent);
+        return hash(postId, postTitle, postContent);
     }
 }

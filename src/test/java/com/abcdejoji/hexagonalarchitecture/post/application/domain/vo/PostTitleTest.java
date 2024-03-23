@@ -12,7 +12,7 @@ class PostTitleTest {
     void titleNotNull() throws Exception {
 
         assertThatThrownBy(() -> new PostTitle(null))
-                .isInstanceOf(AssertionError.class)
+                .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("제목은 빈 값일 수 없습니다.");
     }
 
@@ -21,7 +21,7 @@ class PostTitleTest {
     void titleNotEmpty() throws Exception {
 
         assertThatThrownBy(() -> new PostTitle(""))
-                .isInstanceOf(AssertionError.class)
+                .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("제목은 빈 값일 수 없습니다.");
     }
 
@@ -30,7 +30,7 @@ class PostTitleTest {
     void titleNotNullString() throws Exception {
 
         assertThatThrownBy(() -> new PostTitle(" "))
-                .isInstanceOf(AssertionError.class)
+                .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("제목은 빈 값일 수 없습니다.");
     }
 
@@ -41,7 +41,7 @@ class PostTitleTest {
         assertThat(new PostTitle("1".repeat(10))).isNotNull();
 
         assertThatThrownBy(() -> new PostTitle("1".repeat(11)))
-                .isInstanceOf(AssertionError.class)
-                .hasMessage("제목은 10자를 넘을 수 없습니다.");
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("제목은 10자를 초과할 수 없습니다.");
     }
 }

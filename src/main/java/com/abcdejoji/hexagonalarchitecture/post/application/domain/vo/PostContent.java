@@ -8,8 +8,13 @@ public class PostContent {
 
     public PostContent(String value) {
 
-        assert StringUtils.hasText(value) : "내용은 빈 값일 수 없습니다.";
-        assert value.length() <= 500 : "내용은 500자를 넘을 수 없습니다.";
+        if (!StringUtils.hasText(value)) {
+            throw new IllegalArgumentException("내용은 빈 값일 수 없습니다.");
+        }
+
+        if (value.length() > 500) {
+            throw new IllegalArgumentException("내용은 500자를 초과할 수 없습니다.");
+        }
 
         this.value = value;
     }

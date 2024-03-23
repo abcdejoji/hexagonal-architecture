@@ -8,8 +8,13 @@ public class PostTitle {
 
     public PostTitle(String value) {
 
-        assert StringUtils.hasText(value) : "제목은 빈 값일 수 없습니다.";
-        assert value.length() <= 10 : "제목은 10자를 넘을 수 없습니다.";
+        if (!StringUtils.hasText(value)) {
+            throw new IllegalArgumentException("제목은 빈 값일 수 없습니다.");
+        }
+
+        if (value.length() > 10) {
+            throw new IllegalArgumentException("제목은 10자를 초과할 수 없습니다.");
+        }
 
         this.value = value;
     }
