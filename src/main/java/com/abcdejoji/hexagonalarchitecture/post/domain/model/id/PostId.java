@@ -1,4 +1,4 @@
-package com.abcdejoji.hexagonalarchitecture.post.application.domain.id;
+package com.abcdejoji.hexagonalarchitecture.post.domain.model.id;
 
 import com.abcdejoji.hexagonalarchitecture.config.jacoco.*;
 

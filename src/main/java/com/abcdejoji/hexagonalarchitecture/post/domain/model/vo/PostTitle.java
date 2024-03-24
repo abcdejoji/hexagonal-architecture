@@ -1,4 +1,4 @@
-package com.abcdejoji.hexagonalarchitecture.post.application.domain.vo;
+package com.abcdejoji.hexagonalarchitecture.post.domain.model.vo;
 
 import org.springframework.util.*;
 

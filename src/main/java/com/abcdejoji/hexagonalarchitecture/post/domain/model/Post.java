@@ -1,8 +1,8 @@
-package com.abcdejoji.hexagonalarchitecture.post.application.domain;
+package com.abcdejoji.hexagonalarchitecture.post.domain.model;
 
 import com.abcdejoji.hexagonalarchitecture.config.jacoco.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.domain.id.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.domain.vo.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.model.id.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.model.vo.*;
 
 import java.util.*;
 

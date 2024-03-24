@@ -1,9 +1,9 @@
-package com.abcdejoji.hexagonalarchitecture.post.application.domain.service;
+package com.abcdejoji.hexagonalarchitecture.post.domain.service;
 
 import com.abcdejoji.hexagonalarchitecture.config.jacoco.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.port.in.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.port.in.dto.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.port.out.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.port.in.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.port.in.dto.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.port.out.*;
 
 class CreatePostService implements CreatePostUseCase {
 

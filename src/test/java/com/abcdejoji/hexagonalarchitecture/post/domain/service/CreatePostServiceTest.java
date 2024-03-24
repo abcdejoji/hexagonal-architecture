@@ -1,8 +1,8 @@
-package com.abcdejoji.hexagonalarchitecture.post.application.domain.service;
+package com.abcdejoji.hexagonalarchitecture.post.domain.service;
 
-import com.abcdejoji.hexagonalarchitecture.post.application.domain.vo.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.port.in.dto.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.port.out.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.model.vo.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.port.in.dto.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.port.out.*;
 import org.junit.jupiter.api.*;
 
 import static org.mockito.Mockito.*;

@@ -1,8 +1,8 @@
-package com.abcdejoji.hexagonalarchitecture.post.application.port.dto;
+package com.abcdejoji.hexagonalarchitecture.post.domain.port.dto;
 
-import com.abcdejoji.hexagonalarchitecture.post.application.domain.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.domain.vo.*;
-import com.abcdejoji.hexagonalarchitecture.post.application.port.in.dto.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.model.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.model.vo.*;
+import com.abcdejoji.hexagonalarchitecture.post.domain.port.in.dto.*;
 import org.junit.jupiter.api.*;
 
 import static org.assertj.core.api.Assertions.*;
